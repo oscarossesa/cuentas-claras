@@ -19,7 +19,7 @@ class App extends Component {
           </div>
           <div className="pantalla-2">
             <h1>Pantalla 2 - Bienvenida y qué quiéres hacer?</h1>
-            <h1>Hola Oscar!!</h1>
+            <h1>Hola Leyla!!</h1>
             <div className="cara">
               <p>La cara de la persona...puede ser la foto.</p>
             </div>
