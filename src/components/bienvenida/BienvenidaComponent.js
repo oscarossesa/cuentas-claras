@@ -19,9 +19,9 @@ export default class Bienvenida extends Component {
       .then(data => {
         let person = data.results.map((per) => {
           return (
-            <div>
+            <div key={ per.id.value }>
               <h1>Hola { per.name.first } { per.name.last }</h1>
-              <div key={ per.results }>
+              <div key={ per.id.value }>
                 <img alt='' src={per.picture.large} />
               </div>
             </div>

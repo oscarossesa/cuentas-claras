@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import ListaProducto from '../producto/ListaProductoComponent';
 
 export default class PagoComponent extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      productos: [
+        { id: "1", nombre: "chopito", precio: 2000, cliente: "Pedro" },
+        { id: "2", nombre: "papas fritas", precio: 2500, cliente: "Juan" },
+        { id: "3", nombre: "chopito", precio: 2000, cliente: "Diego" },
+        { id: "4", nombre: "chopito", precio: 2000, cliente: "José" }
+      ]
+    };
+  }
+
   render() {
     return (
       <div className="pantalla-6">
@@ -13,31 +27,9 @@ export default class PagoComponent extends Component {
           ...luego de presionar en la persona...
         </div>
         <div>
-          El consumo de pepito es de $ 4.500
-          <div>
-          <table>
-            <thead>
-              <tr>
-                <td>Producto</td>
-                <td>$</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Chopito</td>
-                <td>$ 3.000</td>
-              </tr>
-              <tr>
-                <td>Chorri</td>
-                <td>$ 8.700</td>
-              </tr>
-              <tr>
-                <td>Pisquito</td>
-                <td>$ 4.200</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          El consumo de pepito es de $ 4.500 
+          <h2>aqui lista de productos...</h2>
+          <ListaProducto productos={ this.state.productos } />  
         </div>
       </div>
     )

@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
+import ListaProducto from "../producto/ListaProductoComponent";
 
 export default class CuentaComponent extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      productos: [
+        { id: "1", nombre: "chopito", precio: 2000, cliente: "Pedro" },
+        { id: "2", nombre: "papas fritas", precio: 2500, cliente: "Juan" },
+        { id: "3", nombre: "chopito", precio: 2000, cliente: "Diego" },
+        { id: "4", nombre: "chopito", precio: 2000, cliente: "José" }
+      ]
+    };
+  }
+  
   render() {
     return (
       <div className="pantalla-5">
         <h1>Pantalla 5 - Ver cuenta</h1>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <td>Producto</td>
-                <td>$</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Chopito</td>
-                <td>$ 3.000</td>
-              </tr>
-              <tr>
-                <td>Chorri</td>
-                <td>$ 8.700</td>
-              </tr>
-              <tr>
-                <td>Pisquito</td>
-                <td>$ 4.200</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ListaProducto productos={ this.state.productos } />
       </div>
     )
   }
