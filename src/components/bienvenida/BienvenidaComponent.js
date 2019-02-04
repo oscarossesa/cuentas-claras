@@ -20,7 +20,7 @@ export default class Bienvenida extends Component {
         let person = data.results.map((per) => {
           return (
             <div key={ per.id.value }>
-              <h1>Hola { per.name.first } { per.name.last }</h1>
+              <div>Hola { per.name.first } { per.name.last }</div>
               <div key={ per.id.value }>
                 <img alt='' src={per.picture.large} />
               </div>
@@ -33,13 +33,12 @@ export default class Bienvenida extends Component {
     })
   }
 
-
   render() {
     return (
       <div className="pantalla-2">
-        <h1>Pantalla 2 - Bienvenida y qué quiéres hacer?</h1>
+        <h5>Pantalla 2 - Bienvenida y qué quiéres hacer?</h5>
         { this.state.person }
-        <h4>Dime lo que quieres hacer...</h4>
+        Dime lo que quieres hacer...
         <div>
           <button className="">Registrar un consumo</button>
         </div>
