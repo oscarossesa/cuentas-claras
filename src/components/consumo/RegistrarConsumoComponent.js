@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 
-export default class ConsumoComponent extends Component {
+export default class RegistrarConsumo extends Component {
+
   render() {
     return (
       <div className="pantalla-3">
-        <h1>Pantalla 3 - Registrar un consumo</h1>
-        <p>Quiero un <input placeholder="Chopito!!"></input></p>
-
-        <h5>¿Cuánto cuesta?</h5>
-        <div>
-          <input placeholder="$ 3.000"></input>
-        </div>
-
-        <h5>¿Quién lo pide?</h5>
-        <div>
-          Personas de la mesa, mostrar caras...o nombres...
-        </div>
+        <h5>Pantalla 3 - Registrar un consumo</h5>
+        <form onSubmit={this.props.agregarProducto}>
+          <div>
+            Quiero un: <input type="text" placeholder="Chopito!!" name="nombre" />
+          </div>
+          <div>
+            ¿Cuánto cuesta? <input type="text" placeholder="Precio" name="precio" />
+          </div>
+          <div>
+            ¿Quién lo pide? <input type="text" placeholder="Nacho" name="cliente" />
+          </div>          
+          <input type="submit" value="Registar" />
+        </form>        
       </div>
     )
   }

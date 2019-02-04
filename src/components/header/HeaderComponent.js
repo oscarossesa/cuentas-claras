@@ -5,7 +5,7 @@ export default class Header extends Component {
     return (
       <div className="App-header">
         { this.props.children }
-        <h1>Cuentas Claras</h1>
+        <h2>Cuentas Claras</h2>
       </div>
     )
   }
