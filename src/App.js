@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import Header from './components/header/HeaderComponent';
-import Footer from './components/footer/FooterComponent';
-import Registro from './components/registro/RegistroComponent';
-import Bienvenida from './components/bienvenida/BienvenidaComponent';
-import RegistrarConsumo from './components/consumo/RegistrarConsumoComponent';
-import ConfirmacionConsumo from './components/consumo/ConfirmacionConsumoComponent';
-import Cuenta from './components/cuenta/CuentaComponent';
-import Pago from './components/pago/PagoComponent';
-import ConfirmacionPago from './components/pago/ConfirmacionPagoComponent';
-import Consumo from './components/consumo/ConsumoComponent';
+import React, { Component } from "react";
+import Header from "./components/header/HeaderComponent";
+import Footer from "./components/footer/FooterComponent";
+import Registro from "./components/registro/RegistroComponent";
+import Bienvenida from "./components/bienvenida/BienvenidaComponent";
+import RegistrarConsumo from "./components/consumo/RegistrarConsumoComponent";
+import ConfirmacionConsumo from "./components/consumo/ConfirmacionConsumoComponent";
+import Cuenta from "./components/cuenta/CuentaComponent";
+import Pago from "./components/pago/PagoComponent";
+import ConfirmacionPago from "./components/pago/ConfirmacionPagoComponent";
+import Consumo from "./components/consumo/ConsumoComponent";
 import ListaProducto from "./components/producto/ListaProductoComponent";
-
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/home/Home";
+import "./App.css";
 
 class App extends Component {
-  
   // constructor() {
   //   super();
   //   this.state = {
@@ -30,12 +30,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      productos: []
+      productos: [],
     };
   }
 
   handleAgregarProducto(event) {
-    console.log('handleAgregarProducto');
+    console.log("handleAgregarProducto");
     event.preventDefault();
 
     let producto = {
@@ -46,31 +46,45 @@ class App extends Component {
     };
 
     this.setState({
-      productos: this.state.productos.concat([producto])
+      productos: this.state.productos.concat([producto]),
     });
   }
 
   render() {
     return (
-      <div className="App">
+      <>
         <Header />
-        <content className="App-content">
-          <Registro />
+        <div className="container">
+          {/* <Registro />
           <Bienvenida />
-          <RegistrarConsumo agregarProducto={this.handleAgregarProducto.bind(this)} />
+          <RegistrarConsumo
+            agregarProducto={this.handleAgregarProducto.bind(this)}
+          />
           <ListaProducto productos={this.state.productos} />
           <ConfirmacionConsumo />
           <Cuenta />
-          <ListaProducto productos={ this.state.productos } />  
+          <ListaProducto productos={this.state.productos} />
           <Pago />
-          <ListaProducto productos={ this.state.productos } />  
+          <ListaProducto productos={this.state.productos} />
           <ConfirmacionPago />
           <Consumo />
-          <ListaProducto productos={ this.state.productos } />  
-        </content>
+          <ListaProducto productos={this.state.productos} /> */}
+          <Router>
+            <Switch>
+              <Route path="/" component={Home} />
+              {/* <Route exact path="/home" component={H} /> */}
+              {/* <Route exact path="/nuevo-consumo" component={RegistrarConsumo} /> */}
+              {/* <Route
+                exact
+                path="/productos/editar/:id"
+                component={EditarProducto}
+              /> */}
+            </Switch>
+          </Router>
+        </div>
         <Footer />
-      </div>
-    )
+      </>
+    );
   }
 }
 
